@@ -1,0 +1,59 @@
+@model IEnumerable<Domain.DiffieHellmanPoco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SharedPrime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SharedBase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecretA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecretB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SharedSecret)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharedPrime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharedBase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecretA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecretB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharedSecret)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

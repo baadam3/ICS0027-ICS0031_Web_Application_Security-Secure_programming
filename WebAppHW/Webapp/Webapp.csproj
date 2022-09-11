@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>aspnet-Webapp-8FE61DC1-207F-4277-8D57-823C36007422</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Crypto\Crypto.csproj" />
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
+</Project>

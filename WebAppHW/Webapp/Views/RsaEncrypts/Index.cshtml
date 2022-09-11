@@ -1,0 +1,57 @@
+@model IEnumerable<Domain.RsaEncryptPoco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>
+    <a> To encrypt something leave the "Encrypted Message" field empty. 
+        To decrypt, leave "Message" empty. try decrypting "116 5 33 33 118" with primes 7 and 19</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimeP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimeQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EncryptedMessage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimeP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimeQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EncryptedMessage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
